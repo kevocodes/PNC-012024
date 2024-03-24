@@ -14,17 +14,15 @@ import java.util.List;
 @Controller
 @RequestMapping("/library")
 public class LibraryController {
-    private static List<Book> books = new ArrayList<>();
-
-    static {
-        books.add(new Book("0261102303", "Lord of the Rings"));
-        books.add(new Book("0007441428", "Game of Thrones"));
-        books.add(new Book("0747581088", "Harry Potter and the Half-Blood Prince"));
-        books.add(new Book("1401248195", "Watchmen"));
-        books.add(new Book("030788743X", "Ready player one"));
-        books.add(new Book("843760494X", "Cien Años de Soledad"));
-        books.add(new Book("0553804367", "A Briefer History of Time"));
-    }
+    private static final List<Book> books = Arrays.asList(
+            new Book("0261102303", "Lord of the Rings"),
+            new Book("0007441428", "Game of Thrones"),
+            new Book("0747581088", "Harry Potter and the Half-Blood Prince"),
+            new Book("1401248195", "Watchmen"),
+            new Book("030788743X", "Ready player one"),
+            new Book("843760494X", "Cien Años de Soledad"),
+            new Book("0553804367", "A Briefer History of Time")
+    );
 
     @GetMapping("/all")
     public String getAllBooks(Model model) {
